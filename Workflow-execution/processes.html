@@ -1,0 +1,966 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+    
+    
+      
+        <title>Testrun - What the Phage</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#7e56c2">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="deep-orange">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#wtp-terminal-execution" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="What the Phage" class="md-header__button md-logo" aria-label="What the Phage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            What the Phage
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Testrun
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index.html" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../installation/quick_installation.html" class="md-tabs__link">
+        Installation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="Overview.html" class="md-tabs__link md-tabs__link--active">
+        Workflow execution
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../troubleshooting.html" class="md-tabs__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="What the Phage" class="md-nav__button md-logo" aria-label="What the Phage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    What the Phage
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Installation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/quick_installation.html" class="md-nav__link">
+        Quick Installation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Advanced Installation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Advanced Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Advanced Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/nextflow.html" class="md-nav__link">
+        Nextflow
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2_2">
+        Environment
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Environment" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Environment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/Environment/environment.html" class="md-nav__link">
+        Local/Cluster
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" type="checkbox" id="__nav_2_2_3" >
+      
+      <label class="md-nav__link" for="__nav_2_2_3">
+        Engine
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Engine" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Engine
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/Engine/docker.html" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/Engine/singularity.html" class="md-nav__link">
+        Singularity
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Workflow execution
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Workflow execution" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Workflow execution
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Overview.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="commands.html" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Testrun
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="processes.html" class="md-nav__link md-nav__link--active">
+        Testrun
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lets-do-a-testrun" class="md-nav__link">
+    Let's do a Testrun
+  </a>
+  
+    <nav class="md-nav" aria-label="Let's do a Testrun">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#started-process" class="md-nav__link">
+    Started process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finished-process" class="md-nav__link">
+    Finished Process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stored-process" class="md-nav__link">
+    Stored process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-in-queue" class="md-nav__link">
+    Process in Queue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oncomplete" class="md-nav__link">
+    OnComplete
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="results.html" class="md-nav__link">
+        Results
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Troubleshooting
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Troubleshooting" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Troubleshooting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting.html" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lets-do-a-testrun" class="md-nav__link">
+    Let's do a Testrun
+  </a>
+  
+    <nav class="md-nav" aria-label="Let's do a Testrun">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#started-process" class="md-nav__link">
+    Started process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finished-process" class="md-nav__link">
+    Finished Process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stored-process" class="md-nav__link">
+    Stored process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-in-queue" class="md-nav__link">
+    Process in Queue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oncomplete" class="md-nav__link">
+    OnComplete
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="wtp-terminal-execution">WtP terminal execution:</h1>
+<p>In this section we want to explain what you see in the Terminal when you execute WtP:</p>
+<p><strong>I'm currently writing on this part</strong>  </p>
+<h2 id="lets-do-a-testrun">Let's do a Testrun</h2>
+<p>Open your terminal, move to a directory where you want to execute WtP and type/copy the following command  </p>
+<pre><code class="language-bash">nextflow run phage.nf -profile smalltest,local,docker --work-dir work --cores 16
+</code></pre>
+<p>A lot of stuff will pop up but we will quide you through it:  </p>
+<pre><code class="language-bash">N E X T F L O W  ~  version 20.07.1
+Launching `phage.nf` [admiring_pesquet] - revision: 1b76c726d3
+_____ _____ ____ ____ ___ ___ __ __ _ _ 
+  __      _______________________ 
+ /  \    /  \__    ___/\______   \
+ \   \/\/   / |    |    |     ___/
+  \        /  |    |    |    |    
+   \__/\  /   |____|    |____|    
+        \/                        
+_____ _____ ____ ____ ___ ___ __ __ _ _ 
+
+Profile: smalltest,local,docker
+
+Current User: mike
+Nextflow-version: 20.07.1
+WtP intended for Nextflow-version: 20.01.0
+Starting time: 24-07-2020 15:18 UTC
+Workdir location [--workdir]:
+  /home/mike/bioinformatics/What_the_Phage/cores=16
+Output location [--output]:
+  results
+Database location [--databases]:
+  nextflow-autodownload-databases
+
+CPUs to use: 8, maximal CPUs to use: 20
+</code></pre>
+<ul>
+<li>this is the first thing that will pop up and will give you some basic workflow information: eg where output is stored or how many cores you are using for computing  </li>
+</ul>
+<hr />
+<ul>
+<li>An overview about all the WtP processes will show up and looks like this:</li>
+</ul>
+<pre><code class="language-bash">[6b/79564a] process &gt; identify_fasta_MSF:fasta_validation_wf:input_suffix_check (1)           [100%] 1 of 1 ✔
+[c7/d34016] process &gt; identify_fasta_MSF:fasta_validation_wf:seqkit (1)                       [100%] 1 of 1 ✔
+[-        ] process &gt; identify_fasta_MSF:virsorter_wf:virsorter                               [  0%] 0 of 1
+[-        ] process &gt; identify_fasta_MSF:virsorter_wf:filter_virsorter                        -
+[-        ] process &gt; identify_fasta_MSF:virsorter_wf:virsorter_collect_data                  -
+[ff/f698ec] process &gt; identify_fasta_MSF:virsorter2_wf:virsorter2 (1)                         [  0%] 0 of 1
+[-        ] process &gt; identify_fasta_MSF:virsorter2_wf:filter_virsorter2                      -                 
+*
+*
+*
+executor &gt;  local (9)
+[skipped  ] process &gt; phage_references:download_references                                    [100%] 1 of 1, stored: 1 ✔
+[skipped  ] process &gt; phage_blast_DB:phage_references_blastDB                                 [100%] 1 of 1, stored: 1 ✔
+[skipped  ] process &gt; ppr_dependecies:ppr_download_dependencies                               [100%] 1 of 1, stored: 1 ✔
+[skipped  ] process &gt; vibrant_database:vibrant_download_DB                                    [100%] 1 of 1, stored: 1 ✔
+[skipped  ] process &gt; virsorter_database:virsorter_download_DB                                [100%] 1 of 1, stored: 1 ✔
+[skipped  ] process &gt; pvog_database:pvog_DB                                                   [100%] 1 of 1, stored: 1 ✔
+[skipped  ] process &gt; vogtable_database:vogtable_DB                                           [100%] 1 of 1, stored: 1 ✔
+[skipped  ] process &gt; vog_database:vog_DB                                                     [100%] 1 of 1, stored: 1 ✔
+[skipped  ] process &gt; rvdb_database:rvdb_DB                                                   [100%] 1 of 1, stored: 1 ✔
+[skipped  ] process &gt; checkV_database:download_checkV_DB                                      [100%] 1 of 1, stored: 1 ✔
+[skipped  ] process &gt; sourmash_database:sourmash_download_DB                                  [100%] 1 of 1, stored: 1 ✔
+[6b/79564a] process &gt; identify_fasta_MSF:fasta_validation_wf:input_suffix_check (1)           [100%] 1 of 1 ✔
+[c7/d34016] process &gt; identify_fasta_MSF:fasta_validation_wf:seqkit (1)                       [100%] 1 of 1 ✔
+[-        ] process &gt; identify_fasta_MSF:virsorter_wf:virsorter                               [  0%] 0 of 1
+[-        ] process &gt; identify_fasta_MSF:virsorter_wf:filter_virsorter                        -
+[-        ] process &gt; identify_fasta_MSF:virsorter_wf:virsorter_collect_data                  -
+[ff/f698ec] process &gt; identify_fasta_MSF:virsorter2_wf:virsorter2 (1)                         [  0%] 0 of 1
+[-        ] process &gt; identify_fasta_MSF:virsorter2_wf:filter_virsorter2                      -
+[-        ] process &gt; identify_fasta_MSF:virsorter2_wf:virsorter2_collect_data                -
+* 
+* 
+* 
+[fc/e0fcc7] process &gt; identify_fasta_MSF:pprmeta_wf:pprmeta (1)                               [  0%] 0 of 1
+[-        ] process &gt; identify_fasta_MSF:pprmeta_wf:filter_PPRmeta                            -
+[-        ] process &gt; identify_fasta_MSF:pprmeta_wf:pprmeta_collect_data                      -
+[-        ] process &gt; identify_fasta_MSF:vibrant_wf:vibrant                                   [  0%] 0 of 1
+[-        ] process &gt; identify_fasta_MSF:vibrant_wf:filter_vibrant                            -
+[-        ] process &gt; identify_fasta_MSF:vibrant_wf:vibrant_collect_data                      -
+[-        ] process &gt; identify_fasta_MSF:vibrant_virome_wf:vibrant_virome                     [  0%] 0 of 1
+[-        ] process &gt; identify_fasta_MSF:vibrant_virome_wf:filter_vibrant_virome              -
+[-        ] process &gt; identify_fasta_MSF:vibrant_virome_wf:vibrant_virome_collect_data        -
+[08/50ce71] process &gt; identify_fasta_MSF:virnet_wf:normalize_contig_size (1)                  [100%] 1 of 1 ✔
+[-        ] process &gt; identify_fasta_MSF:virnet_wf:virnet                                     [  0%] 0 of 1
+[-        ] process &gt; identify_fasta_MSF:virnet_wf:filter_virnet                              -
+[-        ] process &gt; identify_fasta_MSF:virnet_wf:virnet_collect_data                        -
+[4e/ca5a07] process &gt; identify_fasta_MSF:phigaro_wf:phigaro (1)                               [  0%] 0 of 1
+[-        ] process &gt; identify_fasta_MSF:phigaro_wf:phigaro_collect_data                      -
+[-        ] process &gt; identify_fasta_MSF:seeker_wf:seeker                                     [  0%] 0 of 1
+[-        ] process &gt; identify_fasta_MSF:seeker_wf:filter_seeker                              -
+[-        ] process &gt; identify_fasta_MSF:seeker_wf:seeker_collect_data                        -
+[-        ] process &gt; identify_fasta_MSF:filter_tool_names                                    -
+[-        ] process &gt; identify_fasta_MSF:r_plot                                               -
+[-        ] process &gt; identify_fasta_MSF:upsetr_plot                                          -
+[-        ] process &gt; identify_fasta_MSF:samtools                                             -
+[-        ] process &gt; phage_annotation_MSF:prodigal                                           -
+[-        ] process &gt; phage_annotation_MSF:hmmscan                                            -
+[-        ] process &gt; phage_annotation_MSF:chromomap_parser                                   -
+[-        ] process &gt; phage_annotation_MSF:chromomap                                          -
+[-        ] process &gt; checkV_wf:checkV                                                        -
+[-        ] process &gt; phage_tax_classification:split_multi_fasta                              -
+[-        ] process &gt; phage_tax_classification:sourmash_for_tax                               -
+</code></pre>
+<h3 id="started-process">Started process</h3>
+<pre><code class="language-bash">[4e/ca5a07] process &gt; identify_fasta_MSF:phigaro_wf:phigaro (1)                               [  0%] 0 of 1
+</code></pre>
+<ul>
+<li><code>[4e/ca5a07]</code>: is the process folder where the tasks of this process is started/executed </li>
+<li><code>identify_fasta_MSF</code>: is one of two sub workflows (identify sequence; phage annotation) </li>
+<li><code>phigaro_wf:</code>: the Phigaro identification process contains a smaller workflow with phigaro and phigaro_collect_data (raw output of Phigaro) </li>
+<li><code>phigaro</code>: is the actual phage identification task </li>
+<li><code>[  0%] 0 of 1</code>: Process has not finished yet </li>
+</ul>
+<hr />
+<h3 id="finished-process">Finished Process</h3>
+<ul>
+<li>this is how a finished process will look like this:</li>
+</ul>
+<pre><code class="language-bash">[6b/79564a] process &gt; identify_fasta_MSF:fasta_validation_wf:input_suffix_check (1)           [100%] 1 of 1 ✔
+</code></pre>
+<ul>
+<li><code>[6b/79564a]</code>: is the process folder where the tasks of this process (input_suffix_check) is executed  </li>
+<li>
+<p>you can access the folder: </p>
+<ul>
+<li>default: <code>cd /tmp/nextflow-phage-$USER/6b/79564a</code> and tabcompletion </li>
+<li>in our case with --work-dir : <code>cd work/6b/79564a</code> and tab completion</li>
+<li>you will see the files used/created in this process</li>
+</ul>
+</li>
+<li>
+<p><code>identify_fasta_MSF</code>: is one of two sub workflows (identify sequence; phage annotation) </p>
+</li>
+<li>
+<p><code>input_suffix_check (1)</code>: is the actual task (in this case: checks if the fasta file has the correct format)   </p>
+</li>
+<li>
+<p><code>[100%] 1 of 1 ✔</code>: tells you that the process is complete </p>
+</li>
+</ul>
+<hr />
+<h3 id="stored-process">Stored process</h3>
+<pre><code class="language-bash">[skipped  ] process &gt; phage_blast_DB:phage_references_blastDB                                 [100%] 1 of 1, stored: 1 ✔
+</code></pre>
+<ul>
+<li>this is shown when you already e.g. downloaded the database so WtP won't execute this process again because the data is already stored</li>
+</ul>
+<hr />
+<h3 id="process-in-queue">Process in Queue</h3>
+<pre><code class="language-bash">[-        ] process &gt; identify_fasta_MSF:phigaro_wf:phigaro_collect_data                      -
+</code></pre>
+<ul>
+<li>this is shows you that the process has not been started yet and is queued and waiting for execution</li>
+</ul>
+<hr />
+<h3 id="oncomplete">OnComplete</h3>
+<pre><code class="language-bash">Done! Results are stored here --&gt; results
+Thank you for using What the Phage
+Please cite us: https://doi.org/10.1101/2020.07.24.219899                                      
+
+Please also cite the other tools we use in our workflow --&gt; results/literature
+Completed at: 30-Oct-2020 10:15:27
+Duration    : 49m 34s
+CPU hours   : 5.2
+Succeeded   : 61
+</code></pre>
+<ul>
+<li>the onComplete message is shown when WtP is done </li>
+<li>here you find again some basic information e.g. how long was your run, where are the results and a literature-file for citing us and the tools WtP uses</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="commands.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Commands" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Commands
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="results.html" class="md-footer__link md-footer__link--next" aria-label="Next: Results" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Results
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      
+    
+  </body>
+</html>
